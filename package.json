@@ -1,14 +1,21 @@
 {
-  "name": "parcel-vanilla-starter",
+  "name": "wx-audio",
   "private": true,
   "version": "0.0.0",
   "source": "src/index.html",
   "scripts": {
-    "start": "parcel",
-    "build": "parcel build"
+    "dev": "vite",
+    "build": "vite build --emptyOutDir"
   },
-  "dependencies": {},
+  "dependencies": {
+    "webuix": "^0.0.3"
+  },
   "devDependencies": {
-    "parcel": "^2.14.0"
+    "archiver": "^7.0.1",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "vite": "^6.2.2",
+    "vite-plugin-minify": "^2.1.0",
+    "vite-plugin-mkcert": "^1.17.8"
   }
 }

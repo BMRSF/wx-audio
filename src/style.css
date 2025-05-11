@@ -1,8 +1,193 @@
-html {
-  color-scheme: light dark;
-  font-family: system-ui;
+@import url("https://mui.kernelsu.org/internal/insets.css");
+@import url("https://mui.kernelsu.org/internal/colors.css");
+
+:root {
+	/* App Base Colors */
+	--primary: #ffb3b1ff;
+	--onPrimary: #571d1eff;
+	--primaryContainer: #733333ff;
+	--onPrimaryContainer: #ffdad8ff;
+	--inversePrimary: #904a49ff;
+	--secondary: #e6bdbbff;
+	--onSecondary: #442929ff;
+	--secondaryContainer: #5d3f3eff;
+	--onSecondaryContainer: #ffdad8ff;
+	--tertiary: #e3c28dff;
+	--onTertiary: #412d05ff;
+	--tertiaryContainer: #5a4319ff;
+	--onTertiaryContainer: #ffdeabff;
+	--background: #1a1111ff;
+	--onBackground: #f0deddff;
+	--surface: #1a1111ff;
+	--tonalSurface: #261919ff;
+	--onSurface: #f0deddff;
+	--surfaceVariant: #524342ff;
+	--onSurfaceVariant: #d7c1c0ff;
+	--surfaceTint: #ffb3b1ff;
+	--inverseSurface: #fff8f7ff;
+	--inverseOnSurface: #231919ff;
+	--error: #f2b8b5ff;
+	--onError: #601410ff;
+	--errorContainer: #8c1d18ff;
+	--onErrorContainer: #f9dedcff;
+	--outline: #a08c8bff;
+
+	--outlineVariant: #524342ff;
+	--scrim: #000000ff;
+
+	--surfaceBright: #423736ff;
+	--surfaceDim: #1a1111ff;
+	--surfaceContainer: #271d1dff;
+	--surfaceContainerHigh: #322827ff;
+	--surfaceContainerHighest: #3d3232ff;
+	--surfaceContainerLow: #231919ff;
+	--surfaceContainerLowest: #140c0cff;
+	/* Filled Tonal Button Colors */
+	--filledTonalButtonContentColor: #ffdad8ff;
+	--filledTonalButtonContainerColor: #5d3f3eff;
+	--filledTonalButtonDisabledContentColor: #f0dedd61;
+	--filledTonalButtonDisabledContainerColor: #f0dedd1f;
+	/* Filled Card Colors */
+	--filledCardContentColor: #f0deddff;
+	--filledCardContainerColor: #3d3232ff;
+	--filledCardDisabledContentColor: #f0dedd61;
+	--filledCardDisabledContainerColor: #453838ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: var(--background);
+  color: var(--onBackground);
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.player-card {
+  /* If it doesn't apply: force the apply */
+  padding-top: calc(var(--window-inset-top, 0px) + 16px) !important;
+  padding-bottom: calc(var(--window-inset-bottom, 0px) + 16px) !important;
+  width: 100%;
   height: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--surfaceContainer);
+}
+
+h2 {
+  margin: 0 0 1rem 0;
+}
+
+.file-list {
+  flex: 1;
+  width: 100%;
+  overflow-y: auto;
+  background: var(--tonalSurface);
+  border-radius: 8px;
+}
+
+.file-item {
+  padding: 1rem;
+  border-bottom: 1px solid #2a1a1a;
+  cursor: pointer;
+}
+
+.file-item:hover {
+  background: var(--primaryContainer);
+}
+
+.file-item.active {
+  background: var(--primary);
+  color: var(--onPrimary);
+  font-weight: bold;
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  background: var(--filledTonalButtonContainerColor);
+  color: var(--filledTonalButtonContentColor);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.loader {
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-top: 4px solid var(--primary);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  animation: spin 1s linear infinite;
+  display: none;
+}
+
+.loader.active {
+  display: block;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+input[type=text] {
+  background: var(--tonalSurface);
+  border: none;
+  border-radius: 8px;
+  color: var(--onSurface);
+  font-size: 1rem;
+  font-family: inherit;
+  outline: none;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+#progressContainer {
+  width: 100%;
+  height: 12px;
+  background: #3a2a2a;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  margin-top: auto;
+}
+
+#progressBar {
+  height: 100%;
+  width: 0%;
+  background: var(--primary);
+  transition: width 0.1s;
 }

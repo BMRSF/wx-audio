@@ -1,13 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parcel Vanilla App</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <h1>Parcel Vanilla App</h1>
-    <p>Edit <code>src/index.html</code> to get started!</p>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>MMRL Audio Player</title>
+  <link rel="stylesheet" type="text/css" href="./style.css" />
+</head>
+
+<body>
+  <div class="player-card">
+    <h2>Select a Song</h2>
+
+    <input type="text" id="pathLoader" />
+
+    <div class="file-list" id="fileList"></div>
+
+    <div class="controls">
+      <button id="playBtn" disabled>Play</button>
+      <button id="stopBtn" disabled>Stop</button>
+      <div class="loader" id="loader"></div>
+    </div>
+
+    <div id="progressContainer">
+      <div id="progressBar"></div>
+    </div>
+  </div>
+
+  <script type="module" src="./index.js"></script>
+</body>
+
 </html>
