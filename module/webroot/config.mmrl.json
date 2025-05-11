@@ -1,0 +1,12 @@
+{
+    "require": {
+        "version": {
+            "required": 33624,
+            "supportText": "Please update to the latest version.",
+            "supportLink": "https://github.com/MMRLApp/MMRL/releases"
+        }
+    },
+    "windowResize": true,
+    "backHandler": false,
+    "exitConfirm": true
+}

@@ -2,7 +2,8 @@ import { defineConfig } from "vite";
 import mkcert from "vite-plugin-mkcert";
 import autoprefixer from "autoprefixer";
 import { ViteMinifyPlugin } from "vite-plugin-minify";
-import magiskPlugin from './vite-plugin-magisk.js';
+import magiskPlugin from "./vite-plugin-magisk.js";
+import * as path from "path";
 
 export default defineConfig({
   root: "./src",
@@ -25,5 +26,11 @@ export default defineConfig({
   },
   build: {
     outDir: "../dist",
+    rollupOptions: {
+      input: {
+        index: path.resolve(__dirname, "src", "index.html"),
+        indexMMRL: path.resolve(__dirname, "src", "index.mmrl.html"),
+      },
+    },
   },
 });

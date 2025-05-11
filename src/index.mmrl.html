@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>MMRL Audio Player</title>
+  <link rel="stylesheet" type="text/css" href="./style.css" />
+</head>
+
+<body>
+  <div class="player-card">
+    <h2>Select a Song</h2>
+
+    <input type="text" id="pathLoader" />
+
+    <div class="file-list" id="fileList"></div>
+
+    <div class="controls">
+      <button id="playBtn" disabled>Play</button>
+      <button id="stopBtn" disabled>Stop</button>
+      <div class="loader" id="loader"></div>
+    </div>
+
+    <div id="progressContainer">
+      <div id="progressBar"></div>
+    </div>
+  </div>
+
+  <script type="module" src="./index.js"></script>
+</body>
+
+</html>
