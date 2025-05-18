@@ -50,7 +50,7 @@ playBtn.onclick = async () => {
   loader.classList.add("active");
 
   try {
-    const path = `/sdcard/Music/Telegram/${currentFilename}`;
+    const path = `${currentPath}/${currentFilename}`;
     const inputStream = fileInputInterface.open(path);
     const stream = await wrapToReadableStream(inputStream, {
       chunkSize: 64 * 1024,
